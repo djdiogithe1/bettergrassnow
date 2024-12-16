@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Internet Marketing, Marketing, Promotions, Business Advertisement, Advertisement">
+    <meta name="keywords" content="Marketing, Internet Marketing, Email, Internet, Local Advertisement, Business Solutions, Advertisement">
+    <meta name="author" content="Mr Michael T Finley">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterGrassNow-Index</title>
+    <link rel="icon" type="image/png" href="./assets/img/Lawnmower.png">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("./assets/img/grass.jpg");
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #1c1c1c;
+            padding: 15px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #00bcd4;
+            font-weight: bold;
+        }
+
+        .menubutton {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menubutton img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Header */
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Align sections side by side */
+            align-items: center;
+            padding: 20px;
+            gap: 20px; /* Space between sections */
+        }
+
+        .header-left {
+            flex: 1; /* Grow to fill available space */
+            max-width: 50%; /* Limit to half the container width */
+        }
+
+        .header-right {
+            flex: 1;
+            text-align: center; /* Center the image */
+            max-width: 50%;
+        }
+
+        .header-right img {
+            width: 100%; /* Make image responsive */
+            max-width: 300px; /* Limit max size */
+            height: auto;
+        }
+
+        .card {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #00bcd4;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 30px #00bcd4;
+        }
+
+        .header-action-aria a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #00bcd4;
+            border: 2px solid #00bcd4;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .header-action-aria a:hover {
+            background-color: #00bcd4;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            color: #00bcd4;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00bcd4;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: rgba(28, 28, 28, 0.95);
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                z-index: 10;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menubutton {
+                display: block;
+            }
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-left,
+            .header-right {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <a href="./index.html" class="logo">BetterGrassNow</a>
+            <ul>
+                <li><a href="./index.html" class="active">HOME</a></li>
+                <li><a href="./services/services.html">SERVICES</a></li>
+                <li><a href="./about/about.html">ABOUT US</a></li>
+                <li><a href="./User_login/login.html">LOGIN</a></li>
+            </ul>
+            <button class="menubutton">
+                <img src="./assets/img/menu.png" alt="menu">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="Home">
+        <div class="header-container container">
+            <div class="header-left">
+                <div class="card">
+                    <h1>Better&nbsp;Grass&nbsp;Now<br>is a leader in lawn care!</h1>
+                    <p>
+                        I'm Michael, a lawn-care specialist local to South Florida. While cutting grass to make it through
+                        college, I decided to create this platform. Our goal is to connect local lawn care professionals
+                        to customers that need lawn care. Create a free customer account and request a quote from a local 
+                        provider!
+                    </p>
+                    <h5>Sign up to grow your business for as little as $29.95/month. Customer accounts are free!</h5>
+                    <div class="header-action-aria">
+                        <a href="../Bettergrassweb/Pro_register/pro_register.html">Sign up and grow your business!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="./assets/img/Lawnmower.png" alt="Lawnmower Icon">
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        2023-2024 BetterGrassNow&copy;<br>
+        <a href="./contact/contact.html">Contact us</a> | <a href="./sitemap.php">Sitemap</a> | <a href="./terms.php">Terms</a>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        const menuButton = document.querySelector('.menubutton');
+        const navLinks = document.querySelector('nav ul');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
