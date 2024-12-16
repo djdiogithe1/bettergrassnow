@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Internet Marketing, Marketing, Promotions, Business Advertisement, Advertisement">
+    <meta name="keywords" content="Marketing, Internet Marketing, Email, Internet, Local Advertisement, Business Solutions, Advertisement">
+    <meta name="author" content="Mr Michael T Finley">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterGrassNow</title>
+    <link rel="icon" type="image/png" href="../assets/img/Lawnmower.png">
+    <link rel="stylesheet" href="../assets/style.css">
+        <style>
+        body {
+            background-image: url("../assets/img/grass.jpg");
+            color: #e0e0e0;
+            font-family: 'Lato', sans-serif;
+        }
+        .card {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #00bcd4;
+            transition: box-shadow 0.3s ease;
+            max-width: 800px;
+        }
+        .card:hover {
+            box-shadow: 0 0 30px #00bcd4;
+        }
+        .form-group label {
+            color: #00bcd4;
+            font-weight: bold;
+        }
+        .form-control {
+            background-color: #333;
+            color: #00bcd4;
+            border: 1px solid #555;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .form-control:focus {
+            background-color: #444;
+            border-color: #00bcd4;
+            color: #00bcd4;
+        }
+        footer {
+    		background-color: #1c1c1c; /* Same color as the form */
+    		color: #00bcd4; /* Aqua text color */
+    		text-align: center; /* Center align content */
+    		padding: 15px 0;
+    		position: relative;
+    		bottom: 0;
+    		width: 100%;
+    		font-weight: bold;
+    		box-shadow: 0 0 10px #00bcd4; /* Subtle glow like the form */
+		}
+        .table-bordered {
+            border: 1px solid #444;
+        }
+        .table th, .table td {
+            color: #00bcd4;
+        }
+        .profile {
+            box-shadow: 0 0 25px #00bcd4;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        nav {
+            background-color: #1c1c1c;
+            padding: 15px 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 24px;
+            color: #00bcd4;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        nav ul li a.active {
+            color: #00bcd4;
+            font-weight: bold;
+        }
+        .provider-list {
+            list-style: none;
+            padding: 0;
+        }
+        .provider-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .provider-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #00bcd4;
+        }
+        .provider-info {
+            color: #00bcd4;
+        }
+        .provider-info span {
+            font-weight: bold;
+        }
+        .provider-check {
+            margin-bottom: 10px;
+        }
+        .provider-check input[type="checkbox"] {
+            margin-right: 10px;
+        }
+		/* Updated styles for image gallery */
+		.image-gallery {
+    		display: flex; /* Use flexbox to arrange images horizontally */
+    		position: absolute;
+    		top: 50px;
+    		left: 50%;
+    		transform: translateX(-50%);
+    		background-color: rgba(0, 0, 0, 0.8);
+    		padding: 20px;
+    		border-radius: 8px;
+    		box-shadow: 0 0 20px #00bcd4;
+    		z-index: 100;
+    		display: none;
+    		justify-content: center; /* Center the images horizontally */
+		}
+
+		.image-gallery img {
+    		max-width: 100px;  /* Set initial size for small images */
+    		margin: 5px;
+    		border-radius: 8px;
+    		object-fit: cover;
+    		transition: transform 0.3s ease;  /* Smooth transition for zoom effect */
+		}
+
+		/* Enlarge the image when hovered over */
+		.image-gallery img:hover {
+    		transform: scale(1.5);  /* Enlarge the image */
+		}
+
+
+
+		.completed-orders li:hover .image-gallery {
+    		display: block;
+		}
+
+        .completed-orders li:hover .image-gallery {
+            display: block;
+        }
+    </style>
+</head>
+
+<header>
+    <nav>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">BetterGrassNow</a>
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../services/services.html">SERVICES</a></li>
+                <li><a href="../about/about.html">ABOUT US</a></li>
+                <li><a href="../User_login/login.html">LOGIN</a></li>
+            </ul>
+            <button class="menubutton"><img src="../assets/img/menu.png" alt="menu"></button>
+        </div>
+    </nav>
+</header>
+
+<body>
+<div class="container">
+            <form action="../User_register/connection.php" class="w-25 m-4" method="post" id="MainForm" enctype="multipart/form-data">
+                <h2 class="mb-3">Register Customer Account</h2><br>
+                <div class="card">
+                <div class="form-group">
+                	<label for="CUST_EMAIL">Email address</label>
+                    <input type="email" class="form-control" id="CUST_EMAIL" name="CUST_EMAIL" placeholder="name@example.com" required>  
+                </div>
+                <div class="form-group">
+                	<label for="CUST_PASS">Password</label>
+                    <input type="password" class="form-control" id="CUST_PASS" name="CUST_PASS" placeholder="Password" required>   
+                </div>
+                <div class="form-group">
+                	<label for="CUST_PASSWORD_CONFIRMATION">Confirm Password</label>
+                    <input type="password" class="form-control" id="CUST_PASSWORD_CONFIRMATION" name="CUST_PASSWORD_CONFIRMATION" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_FNAME">First Name</label>
+                    <input type="text" class="form-control" id="CUST_FNAME" name="CUST_FNAME" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_LNAME">Last Name</label>
+                    <input type="text" class="form-control" id="CUST_LNAME" name="CUST_LNAME" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_ADDRESS">Street Address</label>
+                    <input type="text" class="form-control" id="CUST_ADDRESS" name="CUST_ADDRESS" placeholder="Street Address" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_CITY">City</label>
+                    <input type="text" class="form-control" id="CUST_CITY" name="CUST_CITY" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_STATE">State</label>
+                    <input type="text" class="form-control" id="CUST_STATE" name="CUST_STATE" placeholder="State" required>
+                </div>
+                <div class="form-group">
+                	<label for="CUST_ZIP">Zip</label>
+                    <input type="text" class="form-control" id="CUST_ZIP" name="CUST_ZIP" placeholder="Zip" required>
+                </div>
+                
+                <!-- Image Upload Input -->
+                <div class="form-group">
+                	<label for="CUST_IMAGE">Upload Profile Image</label>
+                    <input type="file" class="form-control" id="CUST_IMAGE" name="CUST_IMAGE">
+                </div>
+                <div class="form-check mb-3">
+            	<input id="checkbox" type="checkbox" id="TERMS" name="terms" required />
+  				<label for="checkbox"> I agree to these <a href="../terms.php">Terms and Conditions</a>.</label>
+        		</div>
+				</div>
+                <button type="submit" name="submit" class="btn btn-primary" style="float: right;">Create New User</button><br>
+                <br>
+                <a href="../Pro_register/Pro_register.html" class="btn btn-secondary mt-2" style="float: right;">Provider Sign Up</a>
+                <br>
+        		<p>*&nbsp;Already have a customer account?<a href="../User_login/login.html">&nbsp;Login</a>&nbsp;here.</p>
+                <br>
+        		<p>*&nbsp;Already have a provider account?<a href="../Pro_login/Pro_login.html">&nbsp;Login</a>&nbsp;here.</p>
+        		
+                
+            </form>
+        </div>
+    </section>
+	<div class="footer">
+            <div class="footer-content">
+                <footer>
+                    2023-2024 BetterGrassNow&copy;
+                            <br><a href="../contact/contact.html">Contact us</a>
+        					<br><a href="../sitemap.php">Sitemap</a>
+        					<br><a href="../terms.php">Terms and Conditions</a> 
+                    </footer>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,149 @@
+:root{
+ --primary:#262226;
+ --secondary:#ed0016;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+
+body {
+ font-family: 'Poppins', sans-serif;
+ font-size: 13px;
+color: #3f3f3f;
+line-height: 20px
+}
+
+
+a{
+ text-decoration: none;
+ color:var(--primary)
+}
+
+a:hover{
+ color: var(--secondary) !important;
+}
+
+.app button{
+ background-color: var(--primary) !important;
+ color:white;
+ outline: none !important;
+ border: none !important;
+}
+
+.app button:hover{
+ background-color: var(--secondary) !important;
+}
+ button:active{
+ transform: scale(0.90);
+ transition: 0.05s;
+}
+
+.logo{
+ font-weight: 500;
+ color: var(--primary);
+}
+
+.top-nav{
+ height: 40px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: auto;
+ 
+}
+.top-links{
+ display: flex;
+ align-items: flex-start;
+ margin: auto;
+ justify-content: right;
+}
+.top-links a{
+ padding-left: 10px;
+ text-transform: uppercase;
+ color: #fff;
+display: block;
+letter-spacing: 1px;
+font-family: 'Poppins', sans-serif;
+font-size: 11px;
+margin-top: 1px;
+}
+
+
+.navbar-nav li a{
+ padding-left: 20px;
+ font-size: 12px;
+}
+
+.home-banner{
+ height: 700px;
+ display: flex;
+ align-items: right;
+ justify-content: flex-end;
+ background-size: cover;
+ background-image: url('https://images.pexels.com/photos/4144294/pexels-photo-4144294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+.form {
+ width: 500px;
+ height: 200px;
+}
+
+.white-text {
+ color: white;
+ border-bottom: 5px solid white;
+}
+
+.text{
+ display: flex;
+ margin: auto;
+ text-align: center;
+}
+
+footer a{
+ color: white;
+}
+
+.database-items .col{
+max-width: 290px;
+  float: left;
+  border: 1px solid #ddd;
+  border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+  border-top: 2px solid rgb(30, 112, 30);
+  margin: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+.grid {
+ padding: 0;
+ margin: 0 auto;
+ display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 5fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.card{
+  width: 100%;
+}
+.card-title{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+
+/* Add this CSS to your existing styles.css file or create a new CSS file and link it in the HTML head section */
+
+/* Profile picture container */
+#userProfilePicture {
+  width: 100px; /* Set the desired fixed width */
+  height: 100px; /* Set the desired fixed height */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Preserve aspect ratio and cover the container */
+  border: 2px solid #fff; /* Optional: Add a border around the image */
+}
