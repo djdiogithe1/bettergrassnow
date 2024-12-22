@@ -134,12 +134,14 @@
             color: #000;
         }
 
-        /* Price Calculator Section */
+        /* Responsive Map */
         #map {
             width: 100%;
-            height: 400px;
+            height: 400px; /* Set a fixed height for better visibility */
+            position: relative;
             border: 2px solid #00bcd4;
             border-radius: 8px;
+            overflow: hidden;
         }
 
         @media (max-width: 768px) {
@@ -199,9 +201,9 @@
             <ul>
                 <li><a href="./index.html" class="active">HOME</a></li>
                 <li><a href="./services/services.html">SERVICES</a></li>
-                <li><a href="./quote.html" class="active">YARD ESTIMATOR</a></li>
+                <li><a href="./quote.html" class="active">YARD ESTIMATOR</a></li>                
                 <li><a href="./about/about.html">ABOUT US</a></li>
-                <li><a href="./User_login/login.html">LOGIN</a></li>
+                <li><a href="./contact.html">CONTACT ME</a></li>
             </ul>
             <button class="menubutton">
                 <img src="./assets/img/menu.png" alt="menu">
@@ -222,8 +224,7 @@
                     <h2>Yard Mowing Price Calculator</h2>
                     <p>
                         Draw an outline of your entire property on the map, and we'll calculate an estimated mowing price
-                        based on the property. The cost is $0.00499 per square foot. The price is a set price per 
-                        property, and may not be reduced or altered based on section.
+                        based on the property. The cost is $0.00499 per square foot.
                     </p><small>* Terms and conditions apply</small>
                     <p><strong>Estimated Price: <span id="price">--</span></strong></p>
                 </div>
@@ -241,7 +242,7 @@
     </footer>
 
     <!-- Google Maps Script -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKDaeM44PW2vCysbp-FaiqHoGp1C8aoo0&libraries=drawing,geometry"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing,geometry"></script>
     <script>
         let map;
         let drawingManager;
@@ -270,8 +271,8 @@
 
         function calculateArea(shape) {
             const area = google.maps.geometry.spherical.computeArea(shape.getPath());
-            const areaInSqFt = area * 10.7639; // Convert meters² to square feet
-            const price = (areaInSqFt * 0.00499).toFixed(2); // Adjusted price per square foot
+            const areaInSqFt = area * 10.7639;
+            const price = (areaInSqFt * 0.00499).toFixed(2);
             document.getElementById('price').innerText = `$${price}`;
         }
 
