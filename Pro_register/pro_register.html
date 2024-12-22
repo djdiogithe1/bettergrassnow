@@ -65,7 +65,7 @@
 </head>
 <body>
     <h1>Provider Registration</h1>
-    <form action="/register" method="POST" enctype="multipart/form-data">
+    <form id="registerForm">
         <div class="form-section">
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname" required>
@@ -127,5 +127,84 @@
         </div>
         <button type="submit">Register</button>
     </form>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID",
+            measurementId: "YOUR_MEASUREMENT_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const storage = getStorage();
+        const db = getFirestore();
+
+        const form = document.getElementById("registerForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const fname = document.getElementById("fname").value;
+            const lname = document.getElementById("lname").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const password_confirmation = document.getElementById("password_confirmation").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const zip = document.getElementById("zip").value;
+            const social = document.getElementById("social").value || null;
+            const dob = document.getElementById("dob").value || null;
+            const stripe = document.getElementById("stripe").value;
+            const background_check = document.getElementById("background_check").value;
+            const image = document.getElementById("image").files[0];
+
+            if (password !== password_confirmation) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const userId = userCredential.user.uid;
+
+                const storageRef = ref(storage, `profile_pictures/${userId}`);
+                await uploadBytes(storageRef, image);
+                const profilePicUrl = await getDownloadURL(storageRef);
+
+                const userDoc = doc(db, "users", userId);
+                await setDoc(userDoc, {
+                    fname,
+                    lname,
+                    email,
+                    address,
+                    city,
+                    state,
+                    zip,
+                    social,
+                    dob,
+                    stripe,
+                    background_check,
+                    profilePicUrl
+                });
+
+                alert("Registration successful!");
+                form.reset();
+            } catch (error) {
+                console.error("Error during registration:", error);
+                alert("Registration failed. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
