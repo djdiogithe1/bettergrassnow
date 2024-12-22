@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BetterGrassNow - Index</title>
     <link rel="icon" type="image/png" href="./assets/img/Lawnmower.png">
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="./assets/style.css">
 
     <style>
         /* General Reset */
@@ -144,23 +142,21 @@
             border-radius: 8px;
         }
 
-        #price {
-            font-weight: bold;
-            color: #00bcd4;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1c1c1c;
-            color: #00bcd4;
-            text-align: center;
-            padding: 15px 0;
-            font-weight: bold;
-            box-shadow: 0 0 10px #00bcd4;
-        }
-
-        /* Responsive Media Queries */
         @media (max-width: 768px) {
+            #map {
+                height: 300px; /* Adjust the height for smaller screens */
+            }
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-left,
+            .header-right {
+                max-width: 100%;
+            }
+
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -181,16 +177,16 @@
             .menubutton {
                 display: block;
             }
+        }
 
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-left,
-            .header-right {
-                max-width: 100%;
-            }
+        /* Footer */
+        footer {
+            background-color: #1c1c1c;
+            color: #00bcd4;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            box-shadow: 0 0 10px #00bcd4;
         }
     </style>
 </head>
@@ -203,7 +199,7 @@
             <ul>
                 <li><a href="./index.html" class="active">HOME</a></li>
                 <li><a href="./services/services.html">SERVICES</a></li>
-                <li><a href="./quote.html" class="active">YARD ESTIMATOR</a></li>                
+                <li><a href="./quote.html" class="active">YARD ESTIMATOR</a></li>
                 <li><a href="./about/about.html">ABOUT US</a></li>
                 <li><a href="./User_login/login.html">LOGIN</a></li>
             </ul>
@@ -215,10 +211,7 @@
 
     <!-- Header Section -->
     <header id="Home">
-     
-
-            <h1>Lawn Estimator</h1>
-   
+        <h1>Lawn Estimator</h1>
     </header>
 
     <!-- Price Calculator Section -->
@@ -228,7 +221,7 @@
                 <div class="card">
                     <h2>Yard Mowing Price Calculator</h2>
                     <p>
-                        &nbsp; Draw an outline of your entire property on the map, and we'll calculate an estimated mowing price
+                        Draw an outline of your entire property on the map, and we'll calculate an estimated mowing price
                         based on the property. The cost is $0.00499 per square foot. The price is a set price per 
                         property, and may not be reduced or altered based on section.
                     </p><small>* Terms and conditions apply</small>
@@ -248,7 +241,7 @@
     </footer>
 
     <!-- Google Maps Script -->
-    <script src="put google api here"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKDaeM44PW2vCysbp-FaiqHoGp1C8aoo0&libraries=drawing,geometry"></script>
     <script>
         let map;
         let drawingManager;
