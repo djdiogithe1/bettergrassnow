@@ -1,289 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Internet Marketing, Marketing, Promotions, Business Advertisement, Advertisement">
-    <meta name="keywords" content="Marketing, Internet Marketing, Email, Internet, Local Advertisement, Business Solutions, Advertisement">
-    <meta name="author" content="Mr Michael T Finley">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BetterGrassNow</title>
-    <link rel="icon" type="image/png" href="../assets/img/Lawnmower.png">
-    <link rel="stylesheet" href="../assets/style.css">
+    <title>Register</title>
     <style>
         body {
-            background-image: url("../assets/img/grass.jpg");
-            color: #e0e0e0;
-            font-family: 'Lato', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        .card {
-            background-color: #000000;
-            color: #fff;
-            border: none;
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px #00bcd4;
-            transition: box-shadow 0.3s ease;
-            max-width: 800px;
-        }
-        .card:hover {
-            box-shadow: 0 0 30px #00bcd4;
-        }
-        .form-group label {
-            color: #00bcd4;
-            font-weight: bold;
-        }
-        .form-control {
-            background-color: #333;
-            color: #00bcd4;
-            border: 1px solid #555;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            border-radius: 5px;
-        }
-        .form-control:focus {
-            background-color: #444;
-            border-color: #00bcd4;
-            color: #00bcd4;
-        }
-        footer {
-    		background-color: #1c1c1c; /* Same color as the form */
-    		color: #00bcd4; /* Aqua text color */
-    		text-align: center; /* Center align content */
-    		padding: 15px 0;
-    		position: relative;
-    		bottom: 0;
-    		width: 100%;
-    		font-weight: bold;
-    		box-shadow: 0 0 10px #00bcd4; /* Subtle glow like the form */
-		}
-        .table-bordered {
-            border: 1px solid #444;
-        }
-        .table th, .table td {
-            color: #00bcd4;
-        }
-        .profile {
-            box-shadow: 0 0 25px #00bcd4;
-            padding: 20px;
-            border-radius: 12px;
+
+        h1 {
+            text-align: center;
+            color: #333;
             margin-top: 20px;
         }
-        nav {
-            background-color: #1c1c1c;
-            padding: 15px 0;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo {
-            font-size: 24px;
-            color: #00bcd4;
-            text-decoration: none;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-left: 20px;
-        }
-        nav ul li a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #00bcd4;
-        }
-        nav ul li a.active {
-            color: #00bcd4;
-            font-weight: bold;
-        }
-        .provider-list {
-            list-style: none;
-            padding: 0;
-        }
-        .provider-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .provider-image {
-            width: 60px;
-            height: 60px;
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 2px solid #00bcd4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .provider-info {
-            color: #00bcd4;
-        }
-        .provider-info span {
+
+        label {
             font-weight: bold;
-        }
-        .provider-check {
-            margin-bottom: 10px;
-        }
-        .provider-check input[type="checkbox"] {
-            margin-right: 10px;
-        }
-		/* Updated styles for image gallery */
-		.image-gallery {
-    		display: flex; /* Use flexbox to arrange images horizontally */
-    		position: absolute;
-    		top: 50px;
-    		left: 50%;
-    		transform: translateX(-50%);
-    		background-color: rgba(0, 0, 0, 0.8);
-    		padding: 20px;
-    		border-radius: 8px;
-    		box-shadow: 0 0 20px #00bcd4;
-    		z-index: 100;
-    		display: none;
-    		justify-content: center; /* Center the images horizontally */
-		}
-
-		.image-gallery img {
-    		max-width: 100px;  /* Set initial size for small images */
-    		margin: 5px;
-    		border-radius: 8px;
-    		object-fit: cover;
-    		transition: transform 0.3s ease;  /* Smooth transition for zoom effect */
-		}
-
-		/* Enlarge the image when hovered over */
-		.image-gallery img:hover {
-    		transform: scale(1.5);  /* Enlarge the image */
-		}
-
-
-
-		.completed-orders li:hover .image-gallery {
-    		display: block;
-		}
-
-        .completed-orders li:hover .image-gallery {
             display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            padding: 3px;
         }
     </style>
 </head>
-
-<header>
-    <nav>
-        <div class="container nav-container">
-            <a href="./index.html" class="logo">BetterGrassNow</a>
-            <ul>
-                <li><a href="../index.html">HOME</a></li>
-                <li><a href="../services/services.html">SERVICES</a></li>
-                <li><a href="../about/about.html">ABOUT US</a></li>
-                <li><a href="../User_login/login.html">LOGIN</a></li>
-            </ul>
-            <button class="menubutton"><img src="../assets/img/menu.png" alt="menu"></button>
-        </div>
-    </nav>
-</header>
-
 <body>
-    <div class="container">
-
-    <form action="connection.php" method="post" id="MainForm" class="w-50 m-4" enctype="multipart/form-data">
-        <h2 class="mb-3">Provider Registration</h2><br>
-        <div class="card">
-        <div class="form-group">
-            <label for="PRO_EMAIL">Email address</label>
-            <input type="email" class="form-control" id="PRO_EMAIL" name="email" placeholder="name@example.com" required>
-        
+    <h1>Provider Registration</h1>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        <div class="form-section">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
         </div>
-       <div class="form-group">
-            <label for="PRO_PASS">Password</label>       
-            <input type="password" class="form-control" id="PRO_PASS" name="password" placeholder="Password" required>
+        <div class="form-section">
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_PASSWORD_CONFIRMATION">Confirm Password</label>
-            <input type="password" class="form-control" id="PRO_PASSWORD_CONFIRMATION" name="password_confirmation" placeholder="Confirm Password" required>
+        <div class="form-section">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_FNAME">First Name</label>        
-            <input type="text" class="form-control" id="PRO_FNAME" name="fname" placeholder="First Name" required>
+        <div class="form-section">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_LNAME">Last Name</label>        
-            <input type="text" class="form-control" id="PRO_LNAME" name="lname" placeholder="Last Name" required>
+        <div class="form-section">
+            <label for="password_confirmation">Confirm Password:</label>
+            <input type="password" id="password_confirmation" name="password_confirmation" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_ADDRESS">Street Address</label>        
-            <input type="text" class="form-control" id="PRO_ADDRESS" name="address" placeholder="Street Address" required>
+        <div class="form-section">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_CITY">City</label>        
-            <input type="text" class="form-control" id="PRO_CITY" name="city" placeholder="City" required>
+        <div class="form-section">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_STATE">State</label>        
-            <input type="text" class="form-control" id="PRO_STATE" name="state" placeholder="State" required>
+        <div class="form-section">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_ZIP">Zip</label>        
-            <input type="text" class="form-control" id="PRO_ZIP" name="zip" placeholder="Zip" required>
+        <div class="form-section">
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" required>
         </div>
-        <div class="form-group">
-            <label for="PRO_SOCIAL">Social Security Number (Required)</label>        
-            <input type="text" class="form-control" id="PRO_SOCIAL" name="social" placeholder="Social Security Number" required>
+        <div class="form-section">
+            <label for="social">Social Security Number (optional):</label>
+            <input type="text" id="social" name="social">
         </div>
-        <div class="form-group">
-            <label for="PRO_STRIPE">Stripe payment link </label>        
-            <input type="text" class="form-control" id="PRO_STRIPE" name="stripe" placeholder="Stripe payment link" required>
-            <p>*&nbsp;Please signup to STRIPE.com for a <a href="../terms.php">Terms and Conditions</a>t.&nbsp;This is required to accept payments.</p>
-        </div><br>
-        <div class="form-group">
-            <label for="PRO_DOB">Date of Birth (Required)</label>        
-            <input type="date" class="form-control" id="PRO_DOB" name="dob" placeholder="Date of Birth" required>
+        <div class="form-section">
+            <label for="dob">Date of Birth (optional):</label>
+            <input type="date" id="dob" name="dob">
         </div>
-        <div class="mb-3">
-            <label for="PRO_IMAGE" class="form-label">Upload Profile Picture</label>
-            <input class="form-control" type="file" id="PRO_IMAGE" name="image" accept="image/*" required>
+        <div class="form-section">
+            <label for="stripe">Stripe Account:</label>
+            <input type="text" id="stripe" name="stripe" required>
         </div>
-        <div class="form-check mb-3">
-            <input id="checkbox" type="checkbox" id="PRO_BACKGROUND_CHECK" name="background_check" required />
-  			<label for="checkbox"> I agree to these <a href="../terms.php">Terms and Conditions</a> &nbsp;and a background check.</label>
+        <div class="form-section">
+            <label for="background_check">Background Check:</label>
+            <select id="background_check" name="background_check" required>
+                <option value="true">Completed</option>
+                <option value="false">Not Completed</option>
+            </select>
         </div>
-	</div>
-        <button type="submit" name="submit" class="btn btn-primary" style="float: right;">Create New User</button>
-         <br>
-        <a href="../User_register/User_register.html" class="btn btn-secondary mt-2" style="float: right;">Customer Sign Up</a>
-        <br>
-        <p>*&nbsp;Already have a provider account?<a href="../Pro_login/Pro_login.html">&nbsp;Login</a>&nbsp;here.</p>
-        <br>
-        <p>*&nbsp;Already have a customer account?<a href="../User_login/login.html">&nbsp;Login</a>&nbsp;here.</p> 
-              
+        <div class="form-section">
+            <label for="image">Profile Picture:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        <button type="submit">Register</button>
     </form>
-
-	</div>
-	<div class="footer">
-            <div class="footer-content">
-                <footer>
-                    2023-2024 BetterGrassNow&copy;
-                            <br><a href="../contact/contact.html">Contact us</a>
-        					<br><a href="../sitemap.php">Sitemap</a>
-        					<br><a href="../terms.php">Terms and Conditions</a> 
-                    </footer>
-            </div>
-        </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-
 </body>
 </html>
-
-
