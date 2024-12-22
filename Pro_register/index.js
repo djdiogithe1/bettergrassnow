@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Static folder for serving files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Bettergrassweb')));
 
 // Multer setup for file uploads
 const upload = multer({ storage: multer.memoryStorage() });
@@ -109,7 +109,7 @@ app.post('/register', upload.single('image'), async (req, res) => {
     await set(providerRef, providerData);
 
     // Redirect to Stripe payment URL
-    const stripePaymentUrl = `https://buy.stripe.com/00g3cRcY9c4laGcaEG?success_url=${encodeURIComponent('http://yourdomain.com/Pro_login/Pro_login.html')}`;
+    const stripePaymentUrl = `https://buy.stripe.com/00g3cRcY9c4laGcaEG?success_url=${encodeURIComponent('http://bettergrassnow.com/Pro_login/Pro_login.html')}`;
     res.redirect(stripePaymentUrl);
   } catch (error) {
     console.error('Error registering provider:', error);
