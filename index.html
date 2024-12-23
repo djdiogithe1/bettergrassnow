@@ -244,42 +244,7 @@
     </footer>
 
     <!-- Google Maps Script -->
-    <script src="map key here"></script>
-    <script>
-        let map;
-        let drawingManager;
-        let selectedShape = null;
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 25.7617, lng: -80.1918 },
-                zoom: 14,
-            });
-
-            drawingManager = new google.maps.drawing.DrawingManager({
-                drawingMode: google.maps.drawing.OverlayType.POLYGON,
-                drawingControl: true,
-                polygonOptions: { editable: true, draggable: true },
-            });
-
-            drawingManager.setMap(map);
-
-            google.maps.event.addListener(drawingManager, 'overlaycomplete', (event) => {
-                if (selectedShape) selectedShape.setMap(null);
-                selectedShape = event.overlay;
-                calculateArea(selectedShape);
-            });
-        }
-
-        function calculateArea(shape) {
-            const area = google.maps.geometry.spherical.computeArea(shape.getPath());
-            const areaInSqFt = area * 10.7639; // Convert meters² to square feet
-            const price = (areaInSqFt * 0.00667).toFixed(2); // Adjusted price per square foot
-            document.getElementById('price').innerText = `$${price}`;
-        }
-
-        window.onload = initMap;
-    </script>
 
     <script>
         const menuButton = document.querySelector('.menubutton');
